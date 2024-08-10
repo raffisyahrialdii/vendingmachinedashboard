@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Vending Machine</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="assets/RevoYou.png">
+</head>
+<body>
+    <nav class="navigasi">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="assets/revou_logo.jpeg" alt="">
+                </span>
+
+                <div class="text">
+                    <span class="title">VENDING MACHINE REPORT</span>
+                    <span class="team">Team 4 Palembang</span>
+                </div>
+            </div>
+
+            <div class="filter">
+                <select id="selector" onchange="updateChart(); update(); updateColumnChart();">
+                    <option value="all">1 January 2022 - 31 December 2022</option>
+                    <option value="jan">1 - 31 January 2022</option>
+                    <option value="feb">1 - 28 February 2022</option>
+                    <option value="mar">1 - 31 March 2022</option>
+                    <option value="apr">1 - 30 April 2022</option>
+                    <option value="may">1 - 31 May 2022</option>
+                    <option value="jun">1 - 30 June 2022</option>
+                    <option value="jul">1 - 31 July 2022</option>
+                    <option value="aug">1 - 31 August 2022</option>
+                    <option value="sept">1 - 30 September 2022</option>
+                    <option value="oct">1 - 31 October 2022</option>
+                    <option value="nov">1 - 30 November 2022</option>
+                    <option value="dec">1 - 31 December 2022</option>
+                </select>                
+            </div>
+        </header>
+    </nav>
+
+    <section class="wrapper">
+        <div class="row">
+            <div class="card">
+                <div class="insight">
+                    <span id="point">TOTAL TRANSACTION</span>
+                    <span id="number">0</span>
+                </div>
+
+                <div class="properties">
+                    <img src="assets/ikon4.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="insight">
+                    <span id="point">TOTAL SALES</span>
+                    <span id="sales">0</span>
+                </div>
+
+                <div class="properties">
+                    <img src="assets/ikon1.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="insight">
+                    <span id="point">QUANTITY SALES</span>
+                    <span id="totalProducts"><strong>0</strong></span>
+                </div>
+
+                <div class="properties">
+                    <img src="assets/ikon2.jpeg" alt="">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="insight">
+                    <span id="point">TOTAL PRODUCTS</span>
+                    <span id="produk">0</span>
+                </div>
+
+                <div class="properties">
+                    <img src="assets/ikon3.jpeg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="chart">
+        <div class="container">
+            <div class="column left">
+                <h2 style="color: #5b86e5">BEST SELLING PRODUCTS</h2>
+                <div class="select-wrapper">
+                    <select id="categorySelector" onchange="updateColumnChart()">
+                        <option value="Type">All Categories</option>
+                        <option value="Food">Food</option>
+                        <option value="Water">Water</option>
+                        <option value="Carbonated">Carbonated</option>
+                        <option value="Non Carbonated">Non Carbonated</option>
+                    </select>
+                </div>
+                <br /><br />
+                <canvas id="columnChart"></canvas>
+              </div>
+      
+            <div class="column right">
+                <h2 style="color: #5B86E5;">TRANSACTION FROM MACHINE</h2>
+                <div class="col-chart">
+                    <div class="chart-con">
+                        <canvas id="doughnutChart"></canvas>
+                    </div>
+                    <div class="select-wrapper">
+                        <label><input type="checkbox" class="doughnut-checkbox" value="Earle Asphalt x1371">Earle Asphalt x1371</label>
+                        <label><input type="checkbox" class="doughnut-checkbox" value="EB Public Library x1380">EB Public Library x1380</label>
+                        <label><input type="checkbox" class="doughnut-checkbox" value="BSQ Mall x1364 - Zales">BSQ Mall x1364 - Zales</label>
+                        <label><input type="checkbox" class="doughnut-checkbox" value="GuttenPlans x1367">GuttenPlans x1367</label>
+                        <label><input type="checkbox" class="doughnut-checkbox" value="BSQ Mall x1366 - ATT">BSQ Mall x1366 - ATT</label>                                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="containers">
+            <div class="column left">
+                <h2 style="color: #5B86E5;">TRANSACTION FROM LOCATION</h2>
+                <div class="select-wrapper">
+                    <!-- Change dropdown to checkboxes -->
+                    <div id="locationCheckboxes" class="checkbox-row">
+                        <label style="font-size: 12px;" class="small-text"><input type="checkbox" id="bar" value="GuttenPlans" onchange="updateChart()"> GuttenPlans</label>
+                        <label style="font-size: 12px;" class="small-text"><input type="checkbox" id="bar" value="EB Public Library" onchange="updateChart()"> EB Public Library</label>
+                        <label style="font-size: 12px;" class="small-text"><input type="checkbox" id="bar" value="Earle Asphalt" onchange="updateChart()"> Earle Asphalt</label>
+                        <label style="font-size: 12px;" class="small-text"><input type="checkbox" id="bar" value="Brunswick Sq Mall" onchange="updateChart()"> Brunswick Sq Mall</label>
+                        <label style="font-size: 12px;" class="small-text"><input type="checkbox" id="bar" value="All" onchange="selectAllLocations(this)"> All Locations</label>
+                    </div>
+                </div>
+                <canvas id="Bar"></canvas>
+            </div>
+            <div class="column right">
+                <h2 style= "color: #5B86E5;">MONTHLY SALES</h2>
+                <div class="select-wrapper">
+                    <select id="quarterSelector">
+                        <option value="quarter">Quarter</option>
+                        <option value="quarter1">Quarter 1</option>
+                        <option value="quarter2">Quarter 2</option>
+                        <option value="quarter3">Quarter 3</option>
+                        <option value="quarter4">Quarter 4</option>
+                    </select>
+                </div>
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    <script src="doughnutChart.js"></script>
+    <script src="bar.js"></script>
+    <script src="lineChart.js"></script>
+    <script src="columnChart.js"></script>
+    
+
+</body>
+</html>

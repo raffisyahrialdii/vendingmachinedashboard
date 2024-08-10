@@ -1,0 +1,455 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+body{
+    background-color: #dee4f0;
+    font-family: Open Sans;
+    margin: 0;
+}
+
+.navigasi{
+    background: linear-gradient(to bottom, #5396e2, #37cedc);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    padding: 10px 14px;
+}
+
+.navigasi header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+.navigasi header .image-text .image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-top: 0px;
+}
+
+.navigasi img{
+    width: 50px;
+    border-radius: 50px;
+    margin-left: 70px;
+}
+
+.navigasi header .text{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+}
+
+header .text .title{
+    margin-left: 60px;
+    margin-top: 0px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+header .text .team{
+    font-size: 13px;
+    margin-left: 60px;
+    margin-top: -2px;
+    display: block;
+}
+
+.filter #selector {
+    float: right;
+    margin: -40px 60px 20px 0;
+    width: 250px;
+    height: 30px;
+    background-color: #FFF;
+    color: #b4c6dd;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: rgba(112, 111, 111, 0.3);
+    box-shadow: 0 2px 5px rgba(112, 111, 111, 0.3);
+}
+
+.wrapper{
+    display: block;
+    padding-top: 90px;
+    justify-content: center;
+}
+  
+.wrapper .row, .wrapper .chart{
+    display: flex;
+    padding-top: 0px;
+    gap: 60px;
+    justify-content: center;
+}
+
+  
+.card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    padding: 10px;
+    flex: 1 1 250px;
+    justify-content: space-between;
+    min-width: 185px;
+    max-width: 250px;
+
+}
+
+.card .insight{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card .insight #point{
+    font-size: 14px;
+    font-weight: bold;
+    color: #6184d9;
+}
+
+.card .insight #number{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card .insight #increase{
+    font-size: 10px;
+    color: #44c52f;
+    font-weight: bold;
+}
+
+.card .insight #decrease{
+    font-size: 10px;
+    color: #e91b1b;
+    font-weight: bold;
+}
+
+.card .properties{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-right: 10px;
+}
+
+.chart{
+    flex-direction: column;
+}
+
+.chart .container {
+    display: flex;
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    justify-content: center;
+    align-items: center;
+}
+
+.chart .containers {
+    display: flex;
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chart .column {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 565px;
+}
+
+.chart .container .right, 
+.chart .containers .right{
+    margin-right: 0;
+    width: 565px;
+    height: 390px
+}
+
+.chart .container .left, 
+.chart .containers .left{
+    margin-left: 0;
+    width: 565px;
+    height: 390px
+}
+
+.chart .select-wrapper #quarterSelector,
+#categorySelector{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    width: 120px;
+    height: 30px;
+    background-color: #FFF;
+    color: #b4c6dd;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 8px;
+    margin-left: 430px;
+    margin-top: -50px;
+    border-style: solid;
+    border-color: rgba(112, 111, 111, 0.3);
+    box-shadow: 0 2px 5px rgba(112, 111, 111, 0.3);
+}
+
+.col-chart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.col-chart .select-wrapper{
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.select-wrapper label {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #494d4d;
+}
+
+.select-wrapper input[type="checkbox"]{
+    width: 12px;
+    height: 12px;
+}
+
+.column #doughnutChart {
+    margin: 10px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    height: 250px;
+    width: 300px;
+}
+
+@media only screen and (max-width: 1024px) {
+    body{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 10px;
+    }
+
+    header {
+        padding-top: 5px;
+    }
+
+    .navigasi header .image-text {
+        align-items: center;
+    }
+
+    .navigasi header .image-text .image {
+        margin: 0;
+    }
+
+    .navigasi img {
+        width: 50px;
+        border-radius: 50px;
+        margin-left: 0;
+    }
+
+    header .text .title {
+        margin-left: 10px;
+        margin-top: 0px;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    header .text .team {
+        font-size: 9px;
+        margin-left: 10px;
+        margin-top: -2px;
+        display: block;
+    }
+
+    .filter #selector {
+        margin-right: 25px;
+        width: calc(50% - 220px);
+        min-width: 100px;
+    }
+
+    .wrapper .row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        
+    }
+
+    .card {
+        max-width: none;
+        padding: 15px;
+    }
+
+    .chart .container, .chart .containers {
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .chart .column {
+      width: 100%;
+      margin: 20px;
+    }
+
+    .chart .container .right, .chart .containers .right,
+    .chart .container .left, .chart .containers .left {
+        width: calc(100% - 40px);
+        height: auto;
+        margin: 20px;
+    }
+
+    .col-chart {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .col-chart .select-wrapper{
+        padding-left: 20px;
+    }
+
+    canvas#columnChart, canvas#myChart,
+    canvas#lineChart {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .chart .select-wrapper #quarterSelector, #categorySelector {
+        margin-left: calc(100% - 120px);
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .navigasi {
+        height: 50px;
+        padding: 0 10px;
+    }
+
+    .navigasi img {
+        width: 30px;
+    }
+
+    header {
+        padding-top: 0;
+    }
+
+    header .text .title {
+        font-size: 13px;
+        font-weight: 500;
+        margin-left: 0;
+    }
+
+    header .text .team {
+        font-size: 5px;
+        margin-left: 0;
+    }
+    
+    .filter #selector {
+        height: 15px;
+        margin-top: -33px;
+        width: calc(50% - 200px);
+        min-width: 80px;
+        font-weight: 400;
+        font-size: 6px;
+    }
+
+    .wrapper {
+        padding-top: 50px;
+    }
+
+    .wrapper .row {
+        gap: 10px;
+        
+    }
+
+    .card {
+        justify-content: center;
+        min-width: 80%;
+        padding-right: 0;
+    }
+
+    .card .insight #point {
+        font-size: 9px;
+    }
+
+    .card .insight #number {
+        font-size: 14px;
+    }
+
+    .card .insight #increase,
+    .card .insight #decrease {
+        font-size: 7px;
+    }
+
+    #increase img, #decrease img {
+        width: 7px;
+        height: 7px;
+    }
+
+    .card .properties {
+        width: 20px;
+        height: 20px;
+        padding-right: 15px;
+    }
+
+    .properties img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .chart {
+        margin-top: 20px;
+    }
+
+    .chart .container .right, .chart .containers .right,
+    .chart .container .left, .chart .containers .left {
+        margin-top: 0;
+    }
+    
+    h2 {
+        font-size: large;
+    }
+
+    .chart .select-wrapper #quarterSelector,
+    #categorySelector {
+        width: 90px;
+        height: 20px;
+        font-size:x-small;
+        font-weight: 400;
+        margin-top: -37px;
+        margin-left: calc(100% - 80px);
+    }
+
+    .chart-con {
+        width: 99%;
+        height: auto;
+    }
+
+    .select-wrapper label {
+        margin-top: 2px;
+        font-size: 8px;
+        font-weight: 500;
+    }
+    
+    .select-wrapper input[type="checkbox"]{
+        width: 9px;
+        height: 9px;
+    }
+}
